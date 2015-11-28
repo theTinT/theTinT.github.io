@@ -7,13 +7,21 @@ myApp.controller('SuDuoKuController', function ($scope, $firebase) {
 
     syncObj.$bindTo($scope,'$scope.board');
 
-    $scope.CellClick = function (row, col){
-      val =  $scope.board[row].column[col].value;
-        if (val < 9) {
-        	$scope.board[row].column[col].value += 1; 
-        }else{
-            $scope.board[row].column[col].value = null;
+    $scope.CellClick = function (outer, inner) {
+
+        if($scope.board[outer].column[inner].locked === true) {}
+
+        else {
+            dataRef.child(outer).child('column').child(inner).child('value').transaction(function (currentValue) {
+                if(currentValue === 9) {
+                    return null;
+                }
+                return (currentValue || 0) +1;
+            }, function(error,comitted,snapshot) {
+
+            });
         }
+
     };
 
     $scope.Restart = function() {
