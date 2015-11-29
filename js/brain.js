@@ -98,6 +98,10 @@ myApp.controller('SuDuoKuController', function ($scope, $firebase) {
     $scope.modThree = function (rowNumber) {
         return rowNumber % 3 === 0;
     };
+
+    $scope.highlightCol = function(colNumber){
+        $scope.highlightColNumber = colNumber;
+    };
     
     $scope.board = [];
 

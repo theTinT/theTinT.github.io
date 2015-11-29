@@ -7,6 +7,9 @@ table {
     border-collapse: collapse;
     color:blue;
 }
+.cells:hover{
+    background-color: white;
+}
 .cells {
     border: 1px solid black;
     height: 20px;
@@ -19,10 +22,16 @@ table {
    -ms-user-select: none;
    user-select: none;
 }
-.rows {
+.highlight {
+    background-color: lightgray;
+}
+.rows:hover {
+    background-color: lightgray;
+}
+.mod3rows {
     border-top: 3px solid black;
 }
-.col {
+.mod3col {
     border-left:3px solid black;
 }
 .bold {
