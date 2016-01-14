@@ -1,0 +1,40 @@
+h1 {
+    color: purple;
+    text-align: center;
+}
+table {
+    border: 3px solid black;
+    border-collapse: collapse;
+    color:blue;
+}
+.cells:hover{
+    background-color: white;
+}
+.cells {
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    cursor: pointer;
+    -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+.highlight {
+    background-color: lightgray;
+}
+.rows:hover {
+    background-color: lightgray;
+}
+.mod3rows {
+    border-top: 3px solid black;
+}
+.mod3col {
+    border-left:3px solid black;
+}
+.bold {
+    font-weight:bold;
+    color: black;
+}

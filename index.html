@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+
+      <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+
+      <script src="js/brain.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+<div ng-controller="SuDuoKuController">
+  <h1 id="header">SU-DUO-KU</h1>
+  <table class='board' align='center'>
+     <tr class='rows' ng-class="{'mod3rows':modThree($index)}" ng-repeat="row in board">
+        <td class='cells' ng-class="{'mod3col':modThree($index), 'bold':cell.locked, 'highlight':$index === highlightColNumber}" ng-mouseover="highlightCol($index)" ng-repeat="cell in row.column" ng-click="CellClick($parent.$index,$index)">{{cell.value}}</td>
+     </tr>
+  </table>
+    <button ng-click="Restart()">Restart</button>
+    <button ng-click="Submit()">Submit</button>
+</div>
+</body>
+</html>
