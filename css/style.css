@@ -7,13 +7,16 @@ table {
     border-collapse: collapse;
     color:blue;
 }
+.board {
+    height: 100%;
+    width: 100%;
+}
 .cells:hover{
     background-color: white;
 }
 .cells {
     border: 1px solid black;
-    height: 20px;
-    width: 20px;
+    font-size: 5vw;
     text-align: center;
     cursor: pointer;
     -moz-user-select: none;
@@ -21,6 +24,16 @@ table {
    -webkit-user-select: none;
    -ms-user-select: none;
    user-select: none;
+}
+.board-container {
+    width: 80vw;
+    height: 80vw;
+    padding-left: 10vw;
+}
+.buttons {
+    horiz-align: center;
+    padding-top: 5px;
+    padding-left: 10vw;
 }
 .highlight {
     background-color: lightgray;

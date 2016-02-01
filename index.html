@@ -12,13 +12,18 @@
   <body>
 <div ng-controller="SuDuoKuController">
   <h1 id="header">SU-DUO-KU</h1>
-  <table class='board' align='center'>
-     <tr class='rows' ng-class="{'mod3rows':modThree($index)}" ng-repeat="row in board">
-        <td class='cells' ng-class="{'mod3col':modThree($index), 'bold':cell.locked, 'highlight':$index === highlightColNumber}" ng-mouseover="highlightCol($index)" ng-repeat="cell in row.column" ng-click="CellClick($parent.$index,$index)">{{cell.value}}</td>
-     </tr>
-  </table>
-    <button ng-click="Restart()">Restart</button>
-    <button ng-click="Submit()">Submit</button>
+
+    <div class="board-container">
+        <table class='board' align='center'>
+            <tr class='rows' ng-class="{'mod3rows':modThree($index)}" ng-repeat="row in board">
+                <td class='cells' ng-class="{'mod3col':modThree($index), 'bold':cell.locked, 'highlight':$index === highlightColNumber}" ng-mouseover="highlightCol($index)" ng-repeat="cell in row.column" ng-click="CellClick($parent.$index,$index)">{{cell.value}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="buttons">
+        <button ng-click="Restart()">Restart</button>
+        <button ng-click="Submit()">Submit</button>
+    </div>
 </div>
 </body>
 </html>
